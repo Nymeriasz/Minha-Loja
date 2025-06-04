@@ -12,7 +12,7 @@ Projeto desenvolvido como atividade prática da aula de Next.js + HeroUI (NextUI
 
 ## 🔗 Links importantes
 
-- 🌐 Aplicação online: [https://minha-loja.vercel.app](https://minha-loja.vercel.app)
+- 🌐 Aplicação online: [https://minha-loja.vercel.app](https://minha-loja-atualizado.vercel.app/)
 - 📁 Repositório no GitHub: [https://github.com/Nymeriasz/Minha-Loja](https://github.com/Nymeriasz/Minha-Loja)
 
 ## 📌 Funcionalidades implementadas
