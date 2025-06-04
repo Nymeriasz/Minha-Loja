@@ -1,32 +1,71 @@
-# 🛍️ Minha Loja – Next.js + NextUI
+# 🛍️ Minha Loja
 
-Projeto desenvolvido como atividade prática da aula de Next.js + HeroUI (NextUI).
+**Minha Loja** é uma aplicação web desenvolvida com **Next.js 13+**, **Tailwind CSS** e **NextUI (HeroUI)**, que consome dados da **FakeStore API** para exibir uma vitrine de produtos. Este projeto foi criado como uma atividade prática para consolidar conhecimentos em desenvolvimento front-end moderno.
 
-## 🚀 Tecnologias usadas
+## 🔗 Links
 
-- [Next.js 13+](https://nextjs.org)
-- [App Router](https://nextjs.org/docs/app)
-- [Tailwind CSS](https://tailwindcss.com)
-- [NextUI (HeroUI)](https://www.heroui.com)
-- [FakeStore API](https://fakestoreapi.com)
+- 🔸 Aplicação Online: [https://minha-loja.vercel.app](https://minha-loja.vercel.app)
+- 🔸 Repositório no GitHub: [https://github.com/Nymeriasz/Minha-Loja](https://github.com/Nymeriasz/Minha-Loja)
 
-## 🔗 Links importantes
+## 🚀 Tecnologias Utilizadas
 
-- 🌐 Aplicação online: [https://minha-loja.vercel.app](https://minha-loja-atualizado.vercel.app/)
-- 📁 Repositório no GitHub: [https://github.com/Nymeriasz/Minha-Loja](https://github.com/Nymeriasz/Minha-Loja)
+- [Next.js 13+](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [NextUI (HeroUI)](https://www.heroui.com/)
+- [FakeStore API](https://fakestoreapi.com/)
 
-## 📌 Funcionalidades implementadas
+## 🧪 API Utilizada
 
-- ✅ Página inicial com listagem de produtos via API
-- ✅ Página dinâmica de produto `/produtos/[id]`
-- ✅ Página de login com simulação de autenticação
-- ✅ Estilização com Tailwind + NextUI
-- ✅ App Router com layout persistente
-- ✅ Metadata, loading e error por rota
-- ✅ Deploy completo na Vercel
+Este projeto consome dados da FakeStore API, uma API pública com produtos fictícios, ideal para prototipagem de e-commerces.
 
-## Deploy on Vercel
+## ✅ Funcionalidades
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Listagem de produtos em tempo real usando a FakeStore API
+- Interface moderna e responsiva com Tailwind CSS + NextUI
+- Navegação entre páginas com o App Router do Next.js
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📦 Como Rodar Localmente
+
+1. Clone o repositório:
+```bash
+git clone https://github.com/Nymeriasz/Minha-Loja.git
+```
+
+2. Acesse o diretório do projeto:
+```bash
+cd Minha-Loja
+```
+
+3. Instale as dependências:
+```bash
+npm install
+# ou
+yarn install
+```
+  
+4. Inicie o servidor de desenvolvimento:
+```bash
+npm run dev
+# ou
+yarn dev
+```
+ 
+5. Acesse no navegador:
+```bash
+[cd Minha-Loja](http://localhost:3000)
+```
+
+## 📁 Estrutura de Pastas (resumida)
+📦Minha-Loja
+┣ 📁src/app/       # Diretório principal da aplicação
+┃ ┣ 📁components/  # Componentes reutilizáveis (Navbar, Cards, etc.)
+┃ ┣ 📁context/     # Contexto global (ex: carrinho)
+┃ ┣ 📁login/       # Página de login
+┃ ┣ 📁produtos/    # Página de listagem de produtos
+┃ ┗ 📁carrinho/    # Página do carrinho
+
+┣ 📁public/              # Arquivos públicos (favicon)
+┣ 📄tailwind.config.js   # Configuração do Tailwind CSS
+┣ 📄tsconfig.json        # Configuração do TypeScript
+┣ 📄next.config.js       # Configuração do Next.js
+┗ 📄package.json         # Dependências e scripts do projeto
