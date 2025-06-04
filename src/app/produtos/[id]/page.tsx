@@ -1,38 +1,32 @@
-import { Metadata } from 'next'
+'use client';
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { id: string }
-}): Promise<Metadata> {
-  const res = await fetch(`https://fakestoreapi.com/products/${params.id}`)
-  const produto = await res.json()
+import { useEffect, useState } from 'react';
+import ProdutoDetalhes from '@/app/components/ProdutoDetalhes';
+import { useRouter } from 'next/navigation';
 
-  return {
-    title: produto.title,
-    description: produto.description,
-  }
-}
+export default function DetalhesProduto({ params }: { params: { id: string } }) {
+  const [produto, setProduto] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+  const router = useRouter();
 
-// Página do produto individual
-export default async function ProdutoPage({
-  params,
-}: {
-  params: { id: string }
-}) {
-  const res = await fetch(`https://fakestoreapi.com/products/${params.id}`)
-  const produto = await res.json()
+  useEffect(() => {
+    async function fetchProduto() {
+      try {
+        const res = await fetch(`https://fakestoreapi.com/products/${params.id}`);
+        if (!res.ok) throw new Error('Produto não encontrado');
+        const data = await res.json();
+        setProduto(data);
+      } catch (error) {
+        router.push('/');
+      } finally {
+        setLoading(false);
+      }
+    }
 
-  return (
-    <div className="p-6 max-w-xl mx-auto">
-      <h1 className="text-2xl font-bold mb-4">{produto.title}</h1>
-      <img
-        src={produto.image}
-        alt={produto.title}
-        className="h-60 mx-auto object-contain mb-4"
-      />
-      <p className="mb-2">{produto.description}</p>
-      <p className="text-lg font-semibold text-blue-600">R$ {produto.price}</p>
-    </div>
-  )
+    fetchProduto();
+  }, [params.id, router]);
+
+  if (loading) return <p className="p-6">Carregando produto...</p>;
+
+  return produto ? <ProdutoDetalhes produto={produto} /> : null;
 }

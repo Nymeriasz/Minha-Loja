@@ -1,20 +1,32 @@
-async function getProdutos() {
-  const res = await fetch('https://fakestoreapi.com/products')
-  return res.json()
-}
+'use client';
+import { useEffect, useState } from 'react';
+import ProductCard from '@/app/components/ProductCard';
 
-export default async function HomePage() {
-  const produtos = await getProdutos()
+export default function HomePage() {
+  const [produtos, setProdutos] = useState<any[]>([]);
+  const [limit, setLimit] = useState(8);
+
+  useEffect(() => {
+    fetch(`https://fakestoreapi.com/products?limit=${limit}`)
+      .then(res => res.json())
+      .then(setProdutos);
+  }, [limit]);
 
   return (
-    <div className="grid grid-cols-2 gap-4 p-4">
-      {produtos.map((produto: any) => (
-        <a key={produto.id} href={`/produtos/${produto.id}`} className="border p-4 rounded shadow">
-          <img src={produto.image} alt={produto.title} className="h-40 object-contain mx-auto" />
-          <h2 className="text-lg font-bold">{produto.title}</h2>
-          <p className="text-sm">R$ {produto.price}</p>
-        </a>
-      ))}
+    <div className="max-w-7xl mx-auto px-6 py-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {produtos.map(produto => (
+          <ProductCard key={produto.id} produto={produto} />
+        ))}
+      </div>
+      <div className="flex justify-center mt-6">
+        <button
+          onClick={() => setLimit(limit + 4)}
+          className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition"
+        >
+          Carregar mais
+        </button>
+      </div>
     </div>
-  )
+  );
 }
