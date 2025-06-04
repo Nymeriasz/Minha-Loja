@@ -56,6 +56,7 @@ yarn dev
 ```
 
 ## 📁 Estrutura de Pastas (resumida)
+```bash
 📦Minha-Loja
 ┣ 📁src/app/       # Diretório principal da aplicação
 ┃ ┣ 📁components/  # Componentes reutilizáveis (Navbar, Cards, etc.)
