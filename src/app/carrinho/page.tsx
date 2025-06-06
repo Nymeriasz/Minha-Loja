@@ -28,7 +28,7 @@ export default function CarrinhoPage() {
               <div className="flex-1 ml-4">
                 <p>{item.title}</p>
                 <p className="text-red-600 font-bold">
-                  R$ {(item.price * item.quantity).toFixed(2)} ({item.quantity}x)
+                  R$ {(item.price).toFixed(2)} ({item.quantity}x)
                 </p>
               </div>
               <button
