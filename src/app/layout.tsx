@@ -15,14 +15,19 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
-      <body className="bg-white text-black">
+      <body className="bg-white text-black flex flex-col min-h-screen">
         <CartProvider>
           <Providers>
             <Navbar />
-            <main className="p-4">{children}</main>
+            <main className="flex-grow p-4">{children}</main>
+            <footer className="bg-gray-50 border-t border-gray-200 text-sm text-gray-600">
+              <div className="bg-gray-200 text-center py-4 text-xs text-gray-500">
+                © {new Date().getFullYear()} Minha Loja — Todos os direitos reservados.
+              </div>
+            </footer>
           </Providers>
         </CartProvider>
       </body>
     </html>
-  );
+  )
 }
