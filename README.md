@@ -5,7 +5,6 @@
 ## 🔗 Links
 
 - Aplicação Online: [https://minha-loja-atualizado.vercel.app](https://minha-loja-atualizado.vercel.app)
-- Repositório no GitHub: [https://github.com/Nymeriasz/Minha-Loja](https://github.com/Nymeriasz/Minha-Loja)
 
 ## 🚀 Tecnologias Utilizadas
 
